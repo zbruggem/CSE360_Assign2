@@ -12,7 +12,7 @@
  *@version 1.00, 24 Feb 2019
  */
 
-package cse360assign3;
+package cse360assign2;
 
 /**
  *This class defines a private variable total, as well as several fundamental
@@ -21,7 +21,7 @@ package cse360assign3;
  *the changing total value of the calculator.
  *
  *@author  Zachary Bruggeman
- *@version 1.00, 24 Feb 2019
+ *@version 2.00, 24 Feb 2019
  */
 public class Calculator {
 
@@ -40,7 +40,7 @@ public class Calculator {
     *@return the integer variable total
     */	
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 
 	
@@ -51,7 +51,7 @@ public class Calculator {
     *@param value an integer given by the user
     */	
 	public void add (int value) {
-		
+		total = total + value;
 	}
 
 	
@@ -62,7 +62,7 @@ public class Calculator {
     *@param value an integer given by the user
     */	
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	
@@ -73,7 +73,7 @@ public class Calculator {
     *@param value an integer given by the user
     */	
 	public void multiply (int value) {
-	
+		total = total * value;
 	}
 	
 	
@@ -84,12 +84,17 @@ public class Calculator {
     *@param value an integer given by the user
     */	
 	public void divide (int value) {
-		
+		if(value == 0) {
+			total = 0;
+		}
+		else {
+			total = total / value;
+		}
 	}
 	
 	
    /**
-    *Returns a string of past calculator commands used. 
+    *Returns a string of past calculator operations. 
     *
     *@return a string of past commands
     */	
